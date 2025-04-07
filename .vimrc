@@ -67,7 +67,7 @@ set laststatus=2
 " Status line left side.
 set statusline+=%#MODIFIED#
 set statusline+=\ %M\ %-F\ %y\ %R
-set statusline+=%=\%{gutentags#statusline()}\ %p%%
+set statusline+=%=\%{FugitiveStatusline()}\%{gutentags#statusline()}\ %p%%
 " }}}
 " configs {{{
 " replace vims :grep with greprg
