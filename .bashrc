@@ -169,6 +169,6 @@ export PATH=$PATH:/home/bruh/builds/zig14/
 eval "$(fzf --bash)"
 export FZF_DEFAULT_OPTS='--height 40% --tmux 80%,40% --layout reverse --border bottom'
 if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
   export FZF_DEFAULT_OPTS='-m'
 fi
