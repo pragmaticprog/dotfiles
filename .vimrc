@@ -42,7 +42,7 @@ nnoremap gx :let @0 = expand('<cfile>')<CR>:exe ':silent !librewolf % <C-R>0'<CR
 " map fzf
 nnoremap <silent> <C-f> :Files<CR>
 " map fzf for git files
-nnoremap <silent> <S-f> :GFiles<CR>
+nnoremap <silent> <leader><S-f> :GFiles<CR>
 " map ripgrep
 nnoremap <silent> <leader>f :Rg<CR>
 " map show buffers
