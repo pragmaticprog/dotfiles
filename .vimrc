@@ -98,6 +98,9 @@ set undofile
 " set screen rolloff so that there are always lines moving above/below the
 " cursor when moving
 set scrolloff=2
+" There are certain files that we would never want to edit with Vim.
+" Wildmenu will ignore files with these extensions.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " }}}
 " plugins {{{
 " Install vim-plug if not found
