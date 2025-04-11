@@ -15,6 +15,7 @@ try
 catch
 	colorscheme default
 endtry
+autocmd ColorScheme * highlight StatusLine ctermbg=darkgray cterm=NONE
 " }}}
 " remaps {{{
 " set tagjump
@@ -59,6 +60,11 @@ vnoremap m <ESC>
 nnoremap <leader>r :source $MYVIMRC<CR>
 " remap . to work in visual mode
 vnoremap . :norm .<ENTER>
+" visual mode remap to not lose selection on shifting text
+xnoremap < <gv
+xnoremap > >gv
+" map a change vim current directory to directory of open buffer
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 " }}}
 " status line {{{
 " Clear status line when vimrc is reloaded.
