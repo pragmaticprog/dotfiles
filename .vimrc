@@ -15,14 +15,16 @@ try
 catch
 	colorscheme default
 endtry
-autocmd ColorScheme * highlight StatusLine ctermbg=darkgray cterm=NONE
+" set status line colours for active window
+autocmd ColorScheme * highlight StatusLine ctermbg=0 ctermfg=103
+" set status line colours for inactive window
+autocmd ColorScheme * highlight StatusLineNC ctermbg=0 ctermfg=240
 " }}}
 " remaps {{{
 " set tagjump
 nnoremap <leader>t g<C-]>
-" map jk to escape in insert and command mode 
+" map jk to escape in insert mode 
 inoremap <nowait> jk <ESC>
-cnoremap jk <ESC>
 " map space k/j to moving a line up or down respectively
 nnoremap <leader>k :m-2<CR>
 nnoremap <leader>j :m+<CR>
