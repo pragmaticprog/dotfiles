@@ -19,6 +19,12 @@ endtry
 autocmd ColorScheme * highlight StatusLine ctermbg=0 ctermfg=103
 " set status line colours for inactive window
 autocmd ColorScheme * highlight StatusLineNC ctermbg=0 ctermfg=240
+" set colours for  tab
+autocmd ColorScheme * highlight TabLineSel ctermbg=0 ctermfg=103
+" set colours for inactive tabs
+autocmd ColorScheme * highlight TabLine ctermbg=0 ctermfg=240
+" set background colour of tab line
+autocmd ColorScheme * highlight TabLineFill ctermbg=0
 " }}}
 " remaps {{{
 " set tagjump
@@ -63,6 +69,8 @@ xnoremap < <gv
 xnoremap > >gv
 " map a change vim current directory to directory of open buffer
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+" map netrw
+nnoremap <leader><s-e> :Explore<CR>
 " }}}
 " status line {{{
 " Clear status line when vimrc is reloaded.
