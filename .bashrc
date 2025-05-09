@@ -160,12 +160,12 @@ fi
 [[ $- != *i* ]] && return
 # Otherwise start tmux
 [[ -z "$TMUX" ]] && exec tmux
-export WINEPREFIX=/home/bruh/'COGMIND (Beta 14)'
+export WINEPREFIX=~/'COGMIND (Beta 14)'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export AWT_TOOLKIT=MToolkit
 export MANPAGER="vim +MANPAGER --not-a-term -"
-#export PATH=$PATH:/home/bruh/builds/zig12/
-export PATH=$PATH:/home/bruh/builds/zig14/
+#export PATH=$PATH:~/builds/zig12/
+export PATH=$PATH:~/builds/zig14/
 eval "$(fzf --bash)"
 export FZF_DEFAULT_OPTS='--height 40% --tmux 80%,40% --layout reverse --border bottom'
 if type rg &> /dev/null; then
