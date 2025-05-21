@@ -25,7 +25,11 @@ F5
 
 # program launcher
 super + @space
-	dmenu_run
+	dmenu_run -l 10 -p "Run:" -nb '#141212' -sf '#242423' -sb '#c5a3ff' -nf '#948ca2' 
+
+# perform web search
+super + ctrl + s
+	sh /usr/bin/dmenu_search.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -98,7 +102,8 @@ super + {o,i}
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on
-
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}' 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
