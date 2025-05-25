@@ -76,30 +76,31 @@ if [ "$color_prompt" = yes ]; then
         # Skull emoji for root terminal
         #prompt_symbol=💀
     fi
-    case "$PROMPT_ALTERNATIVE" in
-        twoline)
-            PS1=$prompt_color'┌──${debian_chroot:+($debian_chroot)──}${VIRTUAL_ENV:+(\[\033[0;1m\]$(basename $VIRTUAL_ENV)'$prompt_color')}('$info_color'\u'$prompt_symbol'\h'$prompt_color')-[\[\033[0;1m\]\w'$prompt_color']\n'$prompt_color'└─'$info_color'\$\[\033[0m\] ';;
-        oneline)
-            PS1='${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }${debian_chroot:+($debian_chroot)}'$info_color'\u@\h\[\033[00m\]:'$prompt_color'\[\033[01m\]\w\[\033[00m\]\$ ';;
-        backtrack)
-            PS1='${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ';;
-    esac
-    unset prompt_color
-    unset info_color
-    unset prompt_symbol
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+#    case "$PROMPT_ALTERNATIVE" in
+#        twoline)
+#            PS1=$prompt_color'┌──${debian_chroot:+($debian_chroot)──}${VIRTUAL_ENV:+(\[\033[0;1m\]$(basename $VIRTUAL_ENV)'$prompt_color')}('$info_color'\u'$prompt_symbol'\h'$prompt_color')-[\[\033[0;1m\]\w'$prompt_color']\n'$prompt_color'└─'$info_color'\$\[\033[0m\] ';;
+#        oneline)
+#            PS1='${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }${debian_chroot:+($debian_chroot)}'$info_color'\u@\h\[\033[00m\]:'$prompt_color'\[\033[01m\]\w\[\033[00m\]\$ ';;
+#        backtrack)
+#            PS1='${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ';;
+#    esac
+#    unset prompt_color
+#    unset info_color
+#    unset prompt_symbol
+#else
+#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+#fi
+#unset color_prompt force_color_prompt
+#
+## If this is an xterm set the title to user@host:dir
+#case "$TERM" in
+#xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
+#    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#    ;;
+#*)
+#    ;;
+#esac
 
 [ "$NEWLINE_BEFORE_PROMPT" = yes ] && PROMPT_COMMAND="PROMPT_COMMAND=echo"
 
@@ -113,7 +114,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias vdir='vdir --color=auto'
     alias passgen="< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32};echo;"
     alias movemon="xrandr --output DisplayPort-1 --auto --rotate right --left-of eDP"
-    alias normon="xrandr --output DisplayPort-1 --auto --left-of eDP"
+    alias normon="xrandr --output  DisplayPort-1 --auto --left-of eDP"
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -163,6 +164,7 @@ fi
 export WINEPREFIX=~/'COGMIND (Beta 14)'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export AWT_TOOLKIT=MToolkit
+export GHIDRAINSTALLDIR=/usr/share/ghidra
 export MANPAGER="vim +MANPAGER --not-a-term -"
 #export PATH=$PATH:~/builds/zig12/
 export PATH=$PATH:~/builds/zig14/
@@ -172,3 +174,5 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
   export FZF_DEFAULT_OPTS='-m'
 fi
+export PS1="\[\e[34m\]\$\w\e[0m\]:"
+export PS2="\[\e[34m\]\011>\e[0m\]"
