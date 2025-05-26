@@ -174,5 +174,5 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
   export FZF_DEFAULT_OPTS='-m'
 fi
-export PS1="\[\e[34m\]\$\w\e[0m\]:"
+export PS1="\[\e[34m\]\$\w\[\e[0m\]:"
 export PS2="\[\e[34m\]\011>\e[0m\]"
